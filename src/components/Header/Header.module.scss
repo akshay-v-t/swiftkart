@@ -1,0 +1,43 @@
+.header{
+   
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 10px;
+    color: #1a1818;
+    max-width: 1140px;
+   margin: 0 auto;    
+    
+}
+
+.beforeHeader{
+
+}
+
+
+.header ul  {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    font-weight: 600;
+    
+}
+
+.header li{
+    cursor: pointer;
+    transition: .2s ease-in-out;
+   
+}
+.header li:hover{
+    cursor: pointer;
+    text-decoration: underline;
+   
+}
+
+.siteLogo{
+    font-size: 12px;
+    font-weight: 900;
+  
+ 
+    
+}
