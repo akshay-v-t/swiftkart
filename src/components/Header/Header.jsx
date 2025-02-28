@@ -1,12 +1,18 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 import styles from './Header.module.scss'
+import { Link } from 'react-router-dom'
+import AppContext from '../../context/Context'
 
 const Header = () => {
-  return (
+  
+  const {cart} = useContext(AppContext);
+
+  return(
+    <div className={styles.container}>
     <div className={styles.header}>
         <div className={styles.siteLogo}>
-            <h1>SwiftKart</h1>
+           <Link to={'/'}> <h1>SwiftKart</h1></Link>
         </div>
         <div className={styles.navMenu}>
           <ul>
@@ -17,11 +23,14 @@ const Header = () => {
 
         </div>
         <div>
-          cart
+         <Link to="/cart"> <button className={styles.cartBtn}>Cart<button>{cart.length}</button></button> </Link>
           
         </div>
     </div>
+    </div>
   )
 }
+
+
 
 export default Header

@@ -4,6 +4,22 @@ const AppContext = createContext();
 
 export const AppContextProvider = ({ children }) => {
   const [Products, setProducts] = useState([]); 
+  const [cart, setCart] = useState([]);
+  
+
+  const handleAddToCart = (product) => {
+  setCart((prevCart) => {
+    const existingProduct = prevCart.find((item) => item.id === product.id);
+
+    if (existingProduct) {
+      return prevCart.map((item) =>
+        item.id === product.id ? { ...item, quantity: item.quantity + product.quantity } : item
+      );
+    } else {
+      return [...prevCart, product];
+    }
+  });
+};
 
   
   const fetchData = () => {
@@ -19,7 +35,7 @@ export const AppContextProvider = ({ children }) => {
   }, []);
 
   return (
-    <AppContext.Provider value={{ Products, setProducts }}>
+    <AppContext.Provider value={{ Products, setProducts, cart,setCart, handleAddToCart }}>
       {children}
     </AppContext.Provider>
   );

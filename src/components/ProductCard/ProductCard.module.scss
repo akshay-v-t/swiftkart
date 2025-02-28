@@ -59,3 +59,24 @@
     background-color: #1e5abc;
 
   }
+
+  .valueBtn{
+    border-radius: 50%;
+    border: 1px solid #a4a4a4;
+    padding: 8px 13px;
+    cursor: pointer;
+  }
+
+  .valueInput{
+    border: none;
+    max-width: 30px;
+    text-align: center;
+  }
+
+  .valueItems{
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    border: 1px solid #4444;
+    border-radius: 30px;
+  }
